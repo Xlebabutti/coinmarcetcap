@@ -19,7 +19,7 @@ r = requests.get(url, headers=headers)
 
 
 class Coinmarketcap:
-  def __init__(self, token):
+  def __init__(self):
       self.apiurl = 'https://pro-api.coinmarketcap.com'
       self.headers = headers = {'Accepts': 'application/json', 'X-CMC_PRO_API_KEY': secrets.API_KEY,}
       self.session = Session()
@@ -45,16 +45,19 @@ class Coinmarketcap:
         if rank <= 100:
             TOP_TOKENS.append(str(name) + ' - ' + str(rank))
         if name == 'MarsDAO':
-          print(f"name: {name} id =  {id}")
+          # print(f"name: {name} id =  {id}")
+          return f"name: {name} id = {id}"
+
+          
+
                
           
   def price_toke_name(self):
         pass
   def xmli_info(self):
-        
         pass
-c = Coinmarketcap(secrets.API_KEY)
+# c = Coinmarketcap(secrets.API_KEY)
 
-print(c.get_all_token())
+# print(c.get_all_token())
 # print(TOP_TOKENS)
 # print(len(TOP_TOKENS))
